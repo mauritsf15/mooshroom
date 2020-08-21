@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<h2>Join the Mooshroom SMP!.</h2>
+
+<p>Discord: <a href="https://discord.gg/6pJkce8">Click here!</a></p>
+
+<p>Join< span id="number"></span> other players on mooshroom.xyz!</p>
+
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function() {
+
+  if (this.readyState == 4 && this.status == 200) {
+
+    var myObj = JSON.parse(this.responseText);
+
+    document.getElementById("number").innerHTML = myObj.players;
+
+  }
+
+};
+xmlhttp.open("GET", "https://mcapi.xdefcon.com/server/mooshroom.xyz/full/json", true);
+
+xmlhttp.send();
+
+</script>
+
+<p>Take a look at <a href="json_demo.txt" target="_blank">json_demo.txt</a></p>
+
+</body>
+
+</html>
+
